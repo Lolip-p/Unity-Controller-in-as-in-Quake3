@@ -355,17 +355,18 @@ public class CPMPlayer : MonoBehaviour
         GUI.Label(new Rect(0, 30, 400, 100), "Max Speed: " + Mathf.Round(playerTopVelocity * 100) / 100 + " ms", style);
     }
 
+    //Теги для изменения значений (теги назначать на обьекты по которым будут перемещаться)
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         switch (hit.gameObject.tag)
         {
-            case "HithJumpBoost":
+            case "HithJumpBoost": // Высокий прыжок (до 20)
                 jumpSpeed = 20f;
                 break;
-            case "LowJumpBoost":
+            case "LowJumpBoost": // Слабый прыжок (до 10)
                 jumpSpeed = 10f;
                 break;
-            case "Ground":
+            case "Ground": // Обычный прыжок (до 8)
                 jumpSpeed = 8f;
                 break;
         }
